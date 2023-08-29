@@ -20,6 +20,11 @@ class Tarjeta{
         }
     }
 
+
+    public function consultarSaldo(){
+        return $this->saldo;
+    }
+
     public function hacerViaje($costo){
         $this->saldo -= $costo;
         $this->viajes += 1;

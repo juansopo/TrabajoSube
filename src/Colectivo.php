@@ -11,7 +11,12 @@ class Colectivo{
     }
 
     function pagarCon(Tarjeta $tarjeta){
-        $tarjeta->hacerViaje($this->tarifa);
+        if($tarjeta->consultarSaldo()>= $this->tarifa){
+            $tarjeta->hacerViaje($this->tarifa);
+        }else{
+            echo "No tiene saldo suficiente";
+            return;
+        }
     }
 }
 

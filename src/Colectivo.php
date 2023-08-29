@@ -1,6 +1,8 @@
 <?php
-
 namespace TrabajoSube;
+require 'Tarjeta.php';
+require 'Boleto.php';
+
 class Colectivo{
 
     public $tarifa;
@@ -10,7 +12,7 @@ class Colectivo{
         $this->tarifa = $boleto->tarifa;
     }
 
-    function pagarCon(Tarjeta $tarjeta){
+    function pagarCon($tarjeta){
         if($tarjeta->consultarSaldo()>= $this->tarifa){
             $tarjeta->hacerViaje($this->tarifa);
         }else{
@@ -21,3 +23,9 @@ class Colectivo{
 }
 
 
+$tarjetanashe = new Tarjeta;
+$tarjetanashe->cargarTarjeta(4000);
+$tarjetanashe->cargarTarjeta(4000);
+$colectivonashe = new Colectivo;
+$colectivonashe->pagarCon($tarjetanashe);
+echo $tarjetanashe->consultarSaldo();

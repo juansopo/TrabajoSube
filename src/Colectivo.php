@@ -21,11 +21,3 @@ class Colectivo{
         }
     }
 }
-
-
-$tarjetanashe = new Tarjeta;
-$tarjetanashe->cargarTarjeta(4000);
-$tarjetanashe->cargarTarjeta(4000);
-$colectivonashe = new Colectivo;
-$colectivonashe->pagarCon($tarjetanashe);
-echo $tarjetanashe->consultarSaldo();

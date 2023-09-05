@@ -40,7 +40,11 @@ class Tarjeta{
         $this->viajes += 1;
         return; 
     }
-    
+   // no se fran si es necesario porque si viajeplus esta declarada como public 
+    //desde colectivo puedo acceder directamente desde colectivo
+    // public function viajePlus(){
+     //   return $this->viajeplus;
+   // }
 }
 
 ?>
